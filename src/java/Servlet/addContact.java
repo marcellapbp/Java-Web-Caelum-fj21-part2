@@ -31,23 +31,20 @@ public class addContact extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        System.out.println("TEste");
+        
         PrintWriter out = response.getWriter();
-        String name = null;
-        String address = null;
-        String email = null;
-        String birthDate = null;
+
+        String name = request.getParameter("nome");
+        String address = request.getParameter("endereco");
+        String email = request.getParameter("email");
+        String birthDate = request.getParameter("dataNasc");
         Calendar dataNascimento = null;
         try {
-            name = request.getParameter("name");
-            address = request.getParameter("endereco");
-            email = request.getParameter("email");
-            birthDate = request.getParameter("dataNasc");
             
             // fazendo a conversão da data
             try {
-                String dataNasc = null;
-                Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataNasc);
+                
+                Date date = new SimpleDateFormat("ddMMyyyy").parse(birthDate);
                 dataNascimento = Calendar.getInstance();
                 dataNascimento.setTime(date);
             } catch (ParseException e) {
@@ -55,27 +52,29 @@ public class addContact extends HttpServlet {
                 return; //para a execução do método
             }
 
-            out.println("</html>");
+
+        
+        
+            Contact contact = new Contact();
+
+            contact.setName(name);
+            contact.setEmail(email);
+            contact.setAddress(address);
+            contact.setBirthDate(dataNascimento);
+            out.println("Testing!");
+
+            ContactDAO dao = new ContactDAO();
+
+            dao.addContact(contact);
+
+            out.println("REGISTERED!");
+
         }catch(RuntimeException e){
-            System.out.println("Erro: " + e);
+            out.println("Erro: " + e);
+            
         } finally {
             out.close();
         }
-        
-        Contact contact = new Contact();
-        
-        contact.setName(name);
-        contact.setEmail(email);
-        contact.setAddress(address);
-        contact.setBirthDate(dataNascimento);
-        
-        
-        ContactDAO dao = new ContactDAO();
-        
-        dao.addContact(contact);
-        
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
