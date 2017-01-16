@@ -1,4 +1,4 @@
-package Servlet;
+package beans;
 
 import java.util.Calendar;
 
@@ -6,7 +6,8 @@ import java.util.Calendar;
  *
  * @author marcella
  */
-class Contact {
+public class Contact {
+    private int Id;
     private String Name;
     private String Email;
     private String Address;
@@ -42,5 +43,13 @@ class Contact {
 
     public void setBirthDate(Calendar BirthDate) {
         this.BirthDate = BirthDate;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
     }
 }
