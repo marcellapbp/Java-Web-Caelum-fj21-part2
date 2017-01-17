@@ -10,6 +10,26 @@
                     <file>${file.reference.mysql-connector-java-5.1.38-bin.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+                <library dirs="200">
+                    <file>${file.reference.java-beans}</file>
+                    <path-in-war>WEB-INF/classes</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.java-dao}</file>
+                    <path-in-war>WEB-INF/classes</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.java-persistence}</file>
+                    <path-in-war>WEB-INF/classes</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.java-servlet}</file>
+                    <path-in-war>WEB-INF/classes</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.jsp-api.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>

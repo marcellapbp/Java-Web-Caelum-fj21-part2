@@ -1,18 +1,18 @@
 <%-- 
-    Document   : listar-contatos
+    Document   : ContactList
     Created on : 16/01/2017, 18:24:05
     Author     : marce
 --%>
 
 <%@page 
     contentType="text/html" pageEncoding="UTF-8"
-%>
-
-<%@page 
+    
     import = 
     "dao.ContactDAO,
-     beans.Contact"
+     beans.Contact,
+     java.util.List;"
 %>
+
 <!DOCTYPE html>
 <html>
     <head>
