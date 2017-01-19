@@ -10,7 +10,7 @@
     import = 
     "dao.ContactDAO,
      beans.Contact,
-     java.util.List;"
+     java.util.List"
 %>
 
 <!DOCTYPE html>
@@ -21,8 +21,9 @@
     </head>
     <body>
         <h1>Contact List</h1>
-        
+        <%--Scriplets--%>
         <% 
+            //problemas com import
             ContactDAO dao = new ContactDAO();
             
             List<Contact> list = dao.contactList();

@@ -88,7 +88,7 @@ public class ContactDAO {
     }
     
     
-    public List<Contact> contactList()
+    public List<Contact> getContactList()
     {
         List<Contact> contacts = new ArrayList<Contact>();
         try
